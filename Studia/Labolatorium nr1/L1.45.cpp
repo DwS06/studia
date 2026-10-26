@@ -21,7 +21,6 @@ int main(){
     // vector<int> ciag = {13,23,35,63,27,10};
     vector<int> ciag;
     ciag = generator();//moja autorska funkcja generująca losowe liczby
-    cout << ciag.size();
     for(int i = 0; i < ciag.size()-1; i++){
         if(ciag.at(i) % 2 == 0){
             ciag.at(i) += 1;
