@@ -18,14 +18,45 @@ void wyswietlanie(bierka tabela[8][8]){
     cout << "   a  b  c  d  e  f  g  h";
     
 }
-pair<int, int> wybor_bierki(bierka tabela[8][8]){
+pair<int, int> wybor_pola(){
     string pole;
     cout << "wybierz pole: ";
     cin >> pole;
     int kolumna = pole[0] - 'a';
     int wiersz = pole[1] - '1';
-    return {kolumna,wiersz};
+    return {wiersz,kolumna};
     // dodać walidację czy na danym polu faktycznie stoi jakaś figura.
+}
+void ruch(bierka tablica[8][8]){
+    string figura,kolor;
+    pair<int, int> wspolzedne_figury;
+    pair<int, int> wspolzedne_ruchu;
+    
+    bool legal;
+    do{
+        cout << "Wybierz pole z bierką ktorą chcesz wykonac ruch: ";
+        wspolzedne_figury = wybor_pola();
+        figura = tablica[wspolzedne_figury.first][wspolzedne_figury.second].figura;
+        kolor = tablica[wspolzedne_figury.first][wspolzedne_figury.second].kolor;
+
+    }while(figura == "puste_pole");
+    do{
+        cout << "Wybierz pole na ktore chcesz sie ruszyc: ";
+        wspolzedne_ruchu = wybor_pola();
+    }while(legal = true);
+
+
+}
+bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, string kolor){
+    if(figura == "pion"){
+        if(kolor == "bialy"){
+            if(w_figury.first == 1){
+                if(w_ruchu.first == 2 || w_ruchu.first == 3 && w_figury.second == w_ruchu.second){ // ruch do przodu z poczatkowej pozycji dla bialych skonnczony
+                    return true;
+                }
+            }
+        }
+    }
 }
 int main(){
     bierka pion_c;
@@ -105,11 +136,10 @@ int main(){
         {wierza_b,skoczek_b,goniec_b,hetman_b,krol_b,goniec_b,skoczek_b,wierza_b}
     };
     wyswietlanie(szachownica);
+    ruch(szachownica);
     cout << endl << "Nacisnij Enter, aby zakonczyc..." << flush;
     cin.get();
-    auto wynik = wybor_bierki(szachownica);
-    int i = wynik.first;
-    int j = wynik.second;
+    
 
     return 0;
 }
