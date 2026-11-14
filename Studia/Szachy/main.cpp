@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 struct bierka{
     string kolor;
@@ -6,7 +7,7 @@ struct bierka{
     char oznaczenie;
 };
 void wyswietlanie(bierka tabela[8][8]){
-    cout << "   a  b  c  d  e  f  g  h" << endl;
+    cout << "\n   a  b  c  d  e  f  g  h" << endl;
     cout << "8 "; for(bierka x : tabela[0]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 8" << endl;
     cout << "7 "; for(bierka x : tabela[1]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 7" << endl;
     cout << "6 "; for(bierka x : tabela[2]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 6" << endl;
@@ -15,7 +16,7 @@ void wyswietlanie(bierka tabela[8][8]){
     cout << "3 "; for(bierka x : tabela[5]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 3" << endl;
     cout << "2 "; for(bierka x : tabela[6]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 2" << endl;
     cout << "1 "; for(bierka x : tabela[7]){cout << '[';if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}cout << ']';} cout << " 1" << endl;
-    cout << "   a  b  c  d  e  f  g  h";
+    cout << "   a  b  c  d  e  f  g  h\n";
     
 }
 pair<int, int> wybor_pola(){
@@ -23,40 +24,172 @@ pair<int, int> wybor_pola(){
     cout << "wybierz pole: ";
     cin >> pole;
     int kolumna = pole[0] - 'a';
-    int wiersz = pole[1] - '1';
+    int wiersz = '8' - pole[1];
+    cout << wiersz << kolumna;
     return {wiersz,kolumna};
-    // dodać walidację czy na danym polu faktycznie stoi jakaś figura.
 }
-void ruch(bierka tablica[8][8]){
-    string figura,kolor;
-    pair<int, int> wspolzedne_figury;
-    pair<int, int> wspolzedne_ruchu;
-    
-    bool legal;
-    do{
-        cout << "Wybierz pole z bierką ktorą chcesz wykonac ruch: ";
-        wspolzedne_figury = wybor_pola();
-        figura = tablica[wspolzedne_figury.first][wspolzedne_figury.second].figura;
-        kolor = tablica[wspolzedne_figury.first][wspolzedne_figury.second].kolor;
-
-    }while(figura == "puste_pole");
-    do{
-        cout << "Wybierz pole na ktore chcesz sie ruszyc: ";
-        wspolzedne_ruchu = wybor_pola();
-    }while(legal = true);
-
-
-}
-bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, string kolor){
+bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, string kolor,bierka tablica[8][8]){
+    bool legal = false;
     if(figura == "pion"){
         if(kolor == "bialy"){
+            if(w_figury.first == 6){
+                if((w_ruchu.first == 5 || w_ruchu.first == 4) && w_figury.second == w_ruchu.second && tablica[w_ruchu.first][w_ruchu.second].figura == "puste_pole"){ // ruch do przodu z poczatkowej pozycji dla bialych skonnczony
+                    legal = true; 
+                }
+            }
+            if(w_ruchu.first == w_figury.first - 1 && w_ruchu.second == w_figury.second && tablica[w_ruchu.first][w_ruchu.second].figura == "puste_pole"){
+                legal = true;
+            }
+            if(w_ruchu.first == w_figury.first - 1 && (w_ruchu.second == w_figury.second + 1 || w_ruchu.second == w_figury.second - 1) && tablica[w_ruchu.first][w_ruchu.second].figura != "puste_pole"){
+                legal = true;
+            }
+        }
+        if(kolor == "czarny"){
             if(w_figury.first == 1){
-                if(w_ruchu.first == 2 || w_ruchu.first == 3 && w_figury.second == w_ruchu.second){ // ruch do przodu z poczatkowej pozycji dla bialych skonnczony
-                    return true;
+                if((w_ruchu.first == 2 || w_ruchu.first == 3) && w_figury.second == w_ruchu.second && tablica[w_ruchu.first][w_ruchu.second].figura == "puste_pole"){ // ruch do przodu z poczatkowej pozycji dla bialych skonnczony
+                    legal = true; 
+                }
+            }
+            if(w_ruchu.first == w_figury.first + 1 && w_ruchu.second == w_figury.second && tablica[w_ruchu.first][w_ruchu.second].figura == "puste_pole"){
+                legal = true;
+            }
+            if(w_ruchu.first == w_figury.first + 1 && (w_ruchu.second == w_figury.second + 1 || w_ruchu.second == w_figury.second - 1) && tablica[w_ruchu.first][w_ruchu.second].figura != "puste_pole" && tablica[w_figury.first][w_figury.second].kolor != tablica[w_ruchu.first][w_ruchu.second].kolor){
+                legal = true;
+            }
+        }
+        return legal;
+    }
+    if(figura == "wierza"){
+        if(w_ruchu.first == w_figury.first){
+            for(int i = w_figury.second;i <8;i++){
+                if(w_ruchu.second == i && tablica[w_figury.first][w_figury.second].kolor != tablica[w_figury.first][i].kolor){
+                    legal = true;
+                }
+                if(tablica[w_figury.first][i].figura != "puste_pole" && i != w_figury.second){
+                    break;
+                }
+            }
+            for(int i = w_figury.second;i >= 0;i--){
+                if(w_ruchu.second == i && tablica[w_figury.first][w_figury.second].kolor != tablica[w_figury.first][i].kolor){
+                    legal = true;
+                }
+                if(tablica[w_figury.first][i].figura != "puste_pole" && i != w_figury.second){
+                    break;
                 }
             }
         }
+        if(w_ruchu.second == w_figury.second){
+            for(int i = w_figury.first;i <8;i++){
+                if(w_ruchu.first == i && tablica[w_figury.first][w_figury.second].kolor != tablica[i][w_figury.second].kolor){
+                    legal = true;
+                }
+                if(tablica[i][w_figury.second].figura != "puste_pole" && i != w_figury.first){
+                    break;
+                }
+            }
+            for(int i = w_figury.first;i >= 0;i--){
+                if(w_ruchu.first == i && tablica[w_figury.first][w_figury.second].kolor != tablica[i][w_figury.second].kolor){
+                    legal = true;
+                }
+                if(tablica[i][w_figury.second].figura != "puste_pole" && i != w_figury.first){
+                    break;
+                }
+            }
+        }
+        return legal;
+
     }
+    if(figura == "goniec"){
+        int wiersz_r = w_figury.first;
+        int kolumna_r = w_figury.second;
+        while(wiersz_r < 7 && kolumna_r < 7){
+            wiersz_r++;
+            kolumna_r++;
+            
+            if(wiersz_r == w_ruchu.first && kolumna_r == w_ruchu.second && tablica[w_figury.first][w_figury.second].kolor != tablica[wiersz_r][kolumna_r].kolor){
+                legal = true;
+                break;
+            }
+            if(tablica[wiersz_r][kolumna_r].figura != "puste_pole"){
+                break;
+            }
+            
+        }
+        wiersz_r = w_figury.first;
+        kolumna_r = w_figury.second;
+        while(wiersz_r > 0 && kolumna_r < 7){
+            wiersz_r--;
+            kolumna_r++;
+            
+            if(wiersz_r == w_ruchu.first && kolumna_r == w_ruchu.second && tablica[w_figury.first][w_figury.second].kolor != tablica[wiersz_r][kolumna_r].kolor){
+                legal = true;
+                break;
+            }
+            if(tablica[wiersz_r][kolumna_r].figura != "puste_pole"){
+                break;
+            }
+            
+        }
+        wiersz_r = w_figury.first;
+        kolumna_r = w_figury.second;
+        while(wiersz_r < 7 && kolumna_r > 0){
+            wiersz_r++;
+            kolumna_r--;
+            
+            if(wiersz_r == w_ruchu.first && kolumna_r == w_ruchu.second && tablica[w_figury.first][w_figury.second].kolor != tablica[wiersz_r][kolumna_r].kolor){
+                legal = true;
+                break;
+            }
+            if(tablica[wiersz_r][kolumna_r].figura != "puste_pole"){
+                break;
+            }
+            
+        }
+        wiersz_r = w_figury.first;
+        kolumna_r = w_figury.second;
+        while(wiersz_r > 0 && kolumna_r > 0){
+            wiersz_r--;
+            kolumna_r--;
+            
+            if(wiersz_r == w_ruchu.first && kolumna_r == w_ruchu.second && tablica[w_figury.first][w_figury.second].kolor != tablica[wiersz_r][kolumna_r].kolor){
+                legal = true;
+                break;
+            }
+            if(tablica[wiersz_r][kolumna_r].figura != "puste_pole"){
+                break;
+            }
+            
+        }
+        return legal;
+    }
+    return false;
+}
+
+void ruch(bierka tablica[8][8],bierka puste_pole){
+    string figura,kolor;
+    pair<int, int> wspolzedne_figury;
+    pair<int, int> wspolzedne_ruchu;
+    do{
+        do{
+            cout << "Wybierz pole z bierką ktorą chcesz wykonac ruch: ";
+            wspolzedne_figury = wybor_pola();
+            figura = tablica[wspolzedne_figury.first][wspolzedne_figury.second].figura;
+            kolor = tablica[wspolzedne_figury.first][wspolzedne_figury.second].kolor;
+
+        }while(figura == "puste_pole");
+    
+        cout << "Wybierz pole na ktore chcesz sie ruszyc: ";
+        wspolzedne_ruchu = wybor_pola();
+        if(is_legal(wspolzedne_figury, wspolzedne_ruchu, figura, kolor, tablica) != true){
+            cout << "\nTen ruch nie jest legalny. Sproboj ponownie\n";
+        }
+    }while(is_legal(wspolzedne_figury, wspolzedne_ruchu, figura, kolor, tablica) != true);
+    if(is_legal(wspolzedne_figury, wspolzedne_ruchu, figura, kolor, tablica) == true){
+        tablica[wspolzedne_ruchu.first][wspolzedne_ruchu.second] = tablica[wspolzedne_figury.first][wspolzedne_figury.second];
+        tablica[wspolzedne_figury.first][wspolzedne_figury.second] = puste_pole;
+    }
+    
+
 }
 int main(){
     bierka pion_c;
@@ -136,8 +269,12 @@ int main(){
         {wierza_b,skoczek_b,goniec_b,hetman_b,krol_b,goniec_b,skoczek_b,wierza_b}
     };
     wyswietlanie(szachownica);
-    ruch(szachownica);
+    while(true){
+        ruch(szachownica, puste_pole);
+        wyswietlanie(szachownica);
+    }
     cout << endl << "Nacisnij Enter, aby zakonczyc..." << flush;
+    cin.ignore(1000,'\n');
     cin.get();
     
 
