@@ -10,14 +10,14 @@ struct bierka{
 };
 void wyswietlanie(bierka tabela[8][8]){
     cout << "\n   a  b  c  d  e  f  g  h" << endl;
-    cout << "8 "; for(bierka x : tabela[0]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 8" << endl;
-    cout << "7 "; for(bierka x : tabela[1]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 7" << endl;
-    cout << "6 "; for(bierka x : tabela[2]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 6" << endl;
-    cout << "5 "; for(bierka x : tabela[3]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 5" << endl;
-    cout << "4 "; for(bierka x : tabela[4]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 4" << endl;
-    cout << "3 "; for(bierka x : tabela[5]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 3" << endl;
-    cout << "2 "; for(bierka x : tabela[6]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 2" << endl;
-    cout << "1 "; for(bierka x : tabela[7]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 1" << endl;
+    cout << "8 "; for(bierka x : tabela[0]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 8" << endl;
+    cout << "7 "; for(bierka x : tabela[1]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 7" << endl;
+    cout << "6 "; for(bierka x : tabela[2]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 6" << endl;
+    cout << "5 "; for(bierka x : tabela[3]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 5" << endl;
+    cout << "4 "; for(bierka x : tabela[4]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 4" << endl;
+    cout << "3 "; for(bierka x : tabela[5]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 3" << endl;
+    cout << "2 "; for(bierka x : tabela[6]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 2" << endl;
+    cout << "1 "; for(bierka x : tabela[7]){if(x.atakowany == true){cout << "\033[38;2;255;0;0m[\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m[\033[0m";}else{cout << '[';}if(x.kolor == "czarny"){cout << "\033[38;2;92;51;23m" << x.oznaczenie << "\033[0m";}if(x.kolor == "bialy"){cout << "\033[38;2;245;222;179m" << x.oznaczenie << "\033[0m";}if(x.kolor == "brak"){cout << x.oznaczenie;}if(x.atakowany == true){cout << "\033[38;2;255;0;0m]\033[0m";}else if(x.wybrany == true){cout <<"\033[38;2;0;185;0m]\033[0m";}else{cout << ']';}} cout << " 1" << endl;
     cout << "   a  b  c  d  e  f  g  h\n";
 }
 pair<int, int> wybor_pola(){
@@ -28,6 +28,8 @@ pair<int, int> wybor_pola(){
     int wiersz = '8' - pole[1];
     return {wiersz,kolumna};
 }
+// funkcja sprawdzajaca czy krol jest pod szachem
+
 //dodać funkcje sprawdzającą czy ruch powoduje odkrycie króla na szacha
 void czyszczenie(bierka tablica[8][8]){
     for(int wiersz = 0; wiersz < 8; wiersz++){
@@ -119,6 +121,138 @@ void atakowany(pair<int,int> w_figury, string figura, string kolor,bierka tablic
                 }
                 break;
             } 
+        }
+    }
+    if(figura == "hetman"){
+        int wiersz = w_figury.first,kolumna = w_figury.second;
+        while(wiersz < 7 && kolumna < 7){
+            wiersz++;
+            kolumna++;
+            if(tablica[wiersz][kolumna].figura != "puste_pole"){
+                if(tablica[wiersz][kolumna].kolor != kolor){
+                    tablica[wiersz][kolumna].atakowany = true;
+                }
+                break;
+            } 
+        }
+        wiersz = w_figury.first;
+        kolumna = w_figury.second;
+        while(wiersz >0 && kolumna < 7){
+            wiersz--;
+            kolumna++;
+            if(tablica[wiersz][kolumna].figura != "puste_pole"){
+                if(tablica[wiersz][kolumna].kolor != kolor){
+                    tablica[wiersz][kolumna].atakowany = true;
+                }
+                break;
+            } 
+        }
+        wiersz = w_figury.first;
+        kolumna = w_figury.second;
+        while(wiersz >0 && kolumna >0){
+            wiersz--;
+            kolumna--;
+            if(tablica[wiersz][kolumna].figura != "puste_pole"){
+                if(tablica[wiersz][kolumna].kolor != kolor){
+                    tablica[wiersz][kolumna].atakowany = true;
+                }
+                break;
+            } 
+        }
+        wiersz = w_figury.first;
+        kolumna = w_figury.second;
+        while(wiersz <7 && kolumna >0){
+            wiersz++;
+            kolumna--;
+            if(tablica[wiersz][kolumna].figura != "puste_pole"){
+                if(tablica[wiersz][kolumna].kolor != kolor){
+                    tablica[wiersz][kolumna].atakowany = true;
+                }
+                break;
+            } 
+        }
+        for(int i = w_figury.first + 1; i < 8;i++){
+            if(tablica[i][w_figury.second].figura != "puste_pole"){
+                if(tablica[i][w_figury.second].kolor != kolor){
+                    tablica[i][w_figury.second].atakowany = true;
+                }
+                break;
+            }
+        }
+        for(int i = w_figury.second + 1; i < 8;i++){
+            if(tablica[w_figury.first][i].figura != "puste_pole"){
+                if(tablica[w_figury.first][i].kolor != kolor){
+                    tablica[w_figury.first][i].atakowany = true;
+                }
+                break;
+            }
+        }
+        for(int i = w_figury.first - 1; i >= 0;i--){
+            if(tablica[i][w_figury.second].figura != "puste_pole"){
+                if(tablica[i][w_figury.second].kolor != kolor){
+                    tablica[i][w_figury.second].atakowany = true;
+                }
+                break;
+            }
+        }
+        for(int i = w_figury.second - 1; i >= 0;i--){
+            if(tablica[w_figury.first][i].figura != "puste_pole"){
+                if(tablica[w_figury.first][i].kolor != kolor){
+                    tablica[w_figury.first][i].atakowany = true;
+                }
+                break;
+            }
+        }
+    }
+    if(figura == "skoczek"){
+        if(w_figury.first + 2 <= 7 && w_figury.second + 1 <=7){
+            if(tablica[w_figury.first + 2][w_figury.second + 1].figura != "puste_pole" && tablica[w_figury.first + 2][w_figury.second + 1].kolor != kolor){
+                tablica[w_figury.first + 2][w_figury.second + 1].atakowany = true;
+            }
+        }
+        if(w_figury.first + 2 <= 7 && w_figury.second -1 >=0){
+            if(tablica[w_figury.first + 2][w_figury.second - 1].figura != "puste_pole" && tablica[w_figury.first + 2][w_figury.second - 1].kolor != kolor){
+                tablica[w_figury.first + 2][w_figury.second - 1].atakowany = true;
+            } 
+        }
+        if(w_figury.first  - 2 >= 0 && w_figury.second -1 >=0){
+            if(tablica[w_figury.first  - 2][w_figury.second - 1].figura != "puste_pole" && tablica[w_figury.first  - 2][w_figury.second - 1].kolor != kolor){
+                tablica[w_figury.first  - 2][w_figury.second - 1].atakowany = true;
+            }
+        }
+        if(w_figury.first  - 2 >= 0 && w_figury.second + 1 <= 7){
+            if(tablica[w_figury.first  - 2][w_figury.second + 1].figura != "puste_pole" && tablica[w_figury.first  - 2][w_figury.second + 1].kolor != kolor){
+                tablica[w_figury.first  - 2][w_figury.second + 1].atakowany = true;
+            }
+        }
+        if(w_figury.second - 2 >= 0 && w_figury.first + 1 <= 7){
+            if(tablica[w_figury.first + 1][w_figury.second - 2].figura != "puste_pole" && tablica[w_figury.first + 1][w_figury.second - 2].kolor != kolor){
+                tablica[w_figury.first + 1][w_figury.second - 2].atakowany = true;
+            }
+        }
+        if(w_figury.second - 2 >= 0 && w_figury.first - 1 >= 0){
+            if(tablica[w_figury.first - 1][w_figury.second - 2].figura != "puste_pole" && tablica[w_figury.first - 1][w_figury.second - 2].kolor != kolor){
+                tablica[w_figury.first - 1][w_figury.second - 2].atakowany = true;
+            }
+        }
+        if(w_figury.second + 2 <= 7 && w_figury.first + 1 <= 7){
+            if(tablica[w_figury.first + 1][w_figury.second + 2].figura != "puste_pole" && tablica[w_figury.first + 1][w_figury.second + 2].kolor != kolor){
+                tablica[w_figury.first + 1][w_figury.second + 2].atakowany = true;
+            }
+        }
+        if(w_figury.second + 2 <= 7 && w_figury.first - 1 >= 0){
+            if(tablica[w_figury.first - 1][w_figury.second + 2].figura != "puste_pole" && tablica[w_figury.first - 1][w_figury.second + 2].kolor != kolor){
+                tablica[w_figury.first - 1][w_figury.second + 2].atakowany = true;
+            }
+        }
+    }
+    if(figura == "krol"){
+        for(int wiersz = w_figury.first - 1; wiersz <= w_figury.first + 1;wiersz++){
+            for(int kolumna = w_figury.second - 1;kolumna <= w_figury.second + 1;kolumna++){
+                if(tablica[wiersz][kolumna].figura != "puste_pole" && tablica[wiersz][kolumna].kolor != kolor){
+                    tablica[wiersz][kolumna].atakowany = true;
+                }
+            }
         }
     }
 }
@@ -359,12 +493,16 @@ bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, strin
     if(figura == "skoczek"){
         if(abs(w_ruchu.first - w_figury.first) == 2){
             if(abs(w_ruchu.second - w_figury.second) == 1){
-                legal = true;
+                if(tablica[w_ruchu.first][w_ruchu.second].kolor != kolor){
+                    legal = true;
+                }
             }
         }
         if(abs(w_ruchu.second - w_figury.second) == 2){
             if(abs(w_ruchu.first - w_figury.first) == 1){
-                legal = true;
+                if(tablica[w_ruchu.first][w_ruchu.second].kolor != kolor){
+                    legal = true;
+                }
             }
         }
         return legal;
@@ -372,7 +510,7 @@ bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, strin
     if(figura == "krol"){
         if(w_figury != w_ruchu){
             if(abs(w_figury.first - w_ruchu.first) <=1 && abs(w_figury.second - w_ruchu.second) <= 1){
-                if(tablica[w_ruchu.first][w_ruchu.second].kolor != tablica[w_figury.first][w_figury.second].kolor){
+                if(tablica[w_ruchu.first][w_ruchu.second].kolor != kolor){
                     legal = true;
                 }
             }
@@ -380,6 +518,7 @@ bool is_legal(pair<int,int> w_figury, pair<int,int> w_ruchu,string figura, strin
         return legal;
     }
     return false;
+    //dodać ruch roszady
 }
 
 void ruch(bierka tablica[8][8],bierka puste_pole){
